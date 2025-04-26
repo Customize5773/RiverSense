@@ -1,8 +1,8 @@
 # yolov8_detect.py
 # YOLOv8 Detection for RiverSense Project
 # Input source: ESP32-CAM MJPEG Stream
-# Author: [Your Name]
-# Date: [Date]
+# Author: [Rasya Pratama]
+# Date: [27 Apr 2025]
 
 from ultralytics import YOLO
 import cv2
