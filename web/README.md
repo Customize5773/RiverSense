@@ -1,59 +1,61 @@
-# RiverSense Web Interface
+# RiverSense Local Website
 
-This folder contains the web server and data sender scripts for the RiverSense project.
+This folder contains the source code for the local monitoring dashboard of RiverSense, running on a lightweight webserver.
+
+---
+
+## Overview
+
+The website displays:
+- **Water Level Status** (Very Low, Low, Medium, High)
+- **Trash Detection Status** (Trash Detected / No Trash Detected)
+- **Live Camera Stream** from ESP32-CAM
+
+The data is fetched dynamically from a local server hosted by Raspberry Pi.
 
 ---
 
 ## File Structure
+
 ```
 /web/
 │
-├── server.py         # Local Flask server to display water level + camera feed
-├── data_sender.py    # Client script to send water level readings to server
+├── index.html    # Main dashboard page
+├── app.js        # JavaScript file to fetch and update sensor data
+└── styles.css    # Styling for the dashboard
 ```
 
 ---
 
-## Requirements
-- Python 3.8+
-- Flask
-- Requests
+## How it Works
 
-Install dependencies:
-```bash
-pip install flask requests
-```
+- `app.js` fetches data from the API endpoint (`http://<raspberry-pi-ip>:5000/data`) every 5 seconds.
+- The water level and trash detection statuses are updated automatically without page reload.
+- The ESP32-CAM live stream is embedded as an `<img>` element that refreshes internally.
 
 ---
 
-## Usage
+## Setup Instructions
 
-1. **Start the Server:**
+1. Host these files on a simple HTTP server. For example, using Python:
 ```bash
-python3 server.py
+cd /path/to/web/
+python3 -m http.server 8000
 ```
-Access the website at:
+2. Open your browser and navigate to:
 ```
-http://<your-raspberry-pi-ip>:5000/
+http://<raspberry-pi-ip>:8000/
 ```
 
-2. **Start the Data Sender:**
-```bash
-python3 data_sender.py
-```
-This will read the water level sensors and push updates automatically to the server.
-
----
-
-## Features
-- Real-time water level status display.
-- Live ESP32-CAM video stream embedded into the web page.
-- Lightweight and easy to deploy on Raspberry Pi.
+3. Ensure:
+   - The local API server (Flask/Python) is running and serving data at `/data`.
+   - The ESP32-CAM is streaming at `http://192.168.1.50/`.
 
 ---
 
 ## Notes
-- Update `ESP32CAM_STREAM_URL` inside `server.py` to match your camera IP.
-- Make sure the Raspberry Pi and ESP32-CAM are on the same WiFi network.
+
+- Adjust the `API_URL` in `app.js` if your server IP or port is different.
+- Adjust the `img` `src` in `index.html` if your ESP32-CAM IP address is different.
 
 ---
