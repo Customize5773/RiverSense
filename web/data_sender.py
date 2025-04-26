@@ -1,7 +1,7 @@
 # data_sender.py
 # Water Level Sender to Local Server
-# Author: [Your Name]
-# Date: [Tanggal]
+# Author: [Rasya Pratama]
+# Date: [27 Apr 2025]
 
 import requests
 import time
