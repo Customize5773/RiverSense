@@ -1,7 +1,5 @@
 // esp32cam_stream.ino
 // Stream live camera feed from ESP32-CAM via WiFi HTTP Server
-// Author: [Your Name]
-// Date: [Date]
 
 #include "esp_camera.h"
 #include <WiFi.h>
