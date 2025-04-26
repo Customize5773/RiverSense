@@ -1,0 +1,38 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RiverSense Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>RiverSense Monitoring Dashboard</h1>
+    </header>
+
+    <main>
+        <section class="status-section">
+            <h2>Water Level Status</h2>
+            <div id="water-level" class="status-box">Loading...</div>
+        </section>
+
+        <section class="status-section">
+            <h2>Trash Detection</h2>
+            <div id="trash-detection" class="status-box">Loading...</div>
+        </section>
+
+        <section class="stream-section">
+            <h2>Live Camera Stream</h2>
+            <img id="camera-stream" src="http://192.168.1.50/" alt="Camera Stream" />
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 RiverSense Project</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
