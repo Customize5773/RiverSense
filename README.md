@@ -1,4 +1,9 @@
 # RiverSense: River Monitoring System Based on Liquid Sensors and YOLOv8 on Raspberry Pi
+## Background
+
+The increase in human activities has caused various environmental problems, including river pollution that can lead to flooding and a decline in water quality. One of the main challenges is detecting and monitoring river conditions in real-time to ensure appropriate mitigation measures can be taken.
+
+**RiverSense** is designed to provide an innovative solution by integrating liquid sensors, YOLOv8-based object recognition, and Raspberry Pi to monitor river water levels and detect waste on the water surface. This system aims to deliver up-to-date information to local users through a web-based server, assisting in quick and accurate decision-making.
 
 ## Project Description
 **RiverSense** is a river condition monitoring system that integrates:
