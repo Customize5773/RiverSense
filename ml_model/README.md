@@ -1,55 +1,47 @@
-# RiverSense - Machine Learning Model
+# RiverSense YOLOv8 Stream Detection
 
-This folder contains the YOLOv8 detection script and model files used to detect trash on the river surface, captured from ESP32-CAM live stream.
+This module handles object detection on the ESP32-CAM video stream using a YOLOv8 model.
 
 ---
 
 ## File Structure
-```bash
+```
 /ml_model/
 │
-├── yolov8_detect.py
+├── yolov8_stream_detection.py  
 ├── model/
-│        └── river_trash_yolov8.pt
-└── requirements.txt
+│   └── river_trash_yolov8.pt     # Trained YOLOv8 model (custom trash detection)
+├── requirements.txt  
 ```
+
 ---
 
-## Installation
+## Requirements
+- Python 3.8+
+- OpenCV
+- ultralytics (YOLOv8)
 
-Install required Python packages:
-
+Install dependencies:
 ```bash
-pip install ultralytics opencv-python
+pip install opencv-python ultralytics
 ```
-### Usage
-
-### Model Information
-
-- **Filename:** river_trash_yolov8.pt
-- **Base Model:** YOLOv8n (Nano version)
-- **Framework:** Ultralytics YOLOv8 (PyTorch)
-- **Purpose:** Detect river trash objects such as plastic bottles, bags, wood pieces, etc.
-- **Size:** Lightweight, suitable for edge devices like Raspberry Pi B+.
 
 ---
 
-### Usage
-1. Update the ESP32_CAM_STREAM_URL in yolov8_detect.py with your actual ESP32-CAM IP address.
+## Usage
+
+1. Make sure the ESP32-CAM is running and accessible via IP address (default `http://192.168.1.50/`).
 2. Run the detection script:
 ```bash
-python3 yolov8_detect.py
+python3 yolov8_stream_detection.py
 ```
-3. The live video with detection results will appear in a window.
-    Press 'q' to exit.
+3. Press `1` to stop detection.
 
+---
 
-This model is automatically loaded by the detection script:
-```python
-model = YOLO("../ml_model/model/river_trash_yolov8.pt")
-```
+## Notes
+- Modify `stream_url` and `model_path` if your network IP or model location is different.
+- Output video is saved as `output.avi` in the current directory.
+- Adjust ESP32-CAM resolution (in firmware) if detection is slow.
 
-### Notes
-- Ensure your Raspberry Pi has enough resources (RAM/CPU) to run real-time YOLOv8 detection.
-- For better performance, using the smaller model version (yolov8n.pt or a quantized model) is recommended.
-- You can customize the classNames list if using different or more specific object classes.
+---
