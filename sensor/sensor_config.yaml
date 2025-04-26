@@ -1,0 +1,9 @@
+# sensor_config.yaml
+# Configuration for RiverSense Float Sensors
+
+pins:
+  low: 17       # GPIO17
+  medium: 27    # GPIO27
+  high: 22      # GPIO22
+
+read_interval: 2  # Interval pembacaan dalam detik
