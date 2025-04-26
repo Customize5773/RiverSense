@@ -23,6 +23,18 @@ Install required Python packages:
 pip install ultralytics opencv-python
 ```
 ### Usage
+
+### Model Information
+
+- **Filename:** river_trash_yolov8.pt
+- **Base Model:** YOLOv8n (Nano version)
+- **Framework:** Ultralytics YOLOv8 (PyTorch)
+- **Purpose:** Detect river trash objects such as plastic bottles, bags, wood pieces, etc.
+- **Size:** Lightweight, suitable for edge devices like Raspberry Pi B+.
+
+---
+
+### Usage
 1. Update the ESP32_CAM_STREAM_URL in yolov8_detect.py with your actual ESP32-CAM IP address.
 2. Run the detection script:
 ```bash
@@ -30,6 +42,12 @@ python3 yolov8_detect.py
 ```
 3. The live video with detection results will appear in a window.
     Press 'q' to exit.
+
+
+This model is automatically loaded by the detection script:
+```python
+model = YOLO("../ml_model/model/river_trash_yolov8.pt")
+```
 
 ### Notes
 - Ensure your Raspberry Pi has enough resources (RAM/CPU) to run real-time YOLOv8 detection.
