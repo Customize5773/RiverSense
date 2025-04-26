@@ -1,0 +1,71 @@
+/* styles.css */
+/* Styling for RiverSense Dashboard */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background-color: #00b4d8;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+main {
+    padding: 20px;
+}
+
+.status-section {
+    margin-bottom: 30px;
+}
+
+.status-box {
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.5em;
+    text-align: center;
+    background-color: #eeeeee;
+}
+
+.low {
+    background-color: #b3e5fc;
+}
+
+.medium {
+    background-color: #81d4fa;
+}
+
+.high {
+    background-color: #0288d1;
+    color: white;
+}
+
+.detected {
+    background-color: #ff8a80;
+    color: white;
+}
+
+.not-detected {
+    background-color: #a5d6a7;
+}
+
+.stream-section img {
+    width: 100%;
+    max-width: 640px;
+    border-radius: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #00b4d8;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
